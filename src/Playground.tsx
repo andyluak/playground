@@ -63,7 +63,7 @@ const Playground: FC<IProps> = ({
       ...snippet,
       [type]: changed,
     }));
-    onChange(changed, type);
+    onChange && onChange(changed, type);
   };
 
   return (
