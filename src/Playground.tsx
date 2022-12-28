@@ -36,6 +36,9 @@ interface IProps {
   theme?: DefaultTheme;
   mode: ColorMode;
   onChange?: (snippet: ISnippet) => void;
+  showEditor?: boolean;
+  showResult?: boolean;
+  showConsole?: boolean;
 }
 
 const Playground: FC<IProps> = ({
@@ -48,6 +51,9 @@ const Playground: FC<IProps> = ({
   theme,
   mode = "dark",
   onChange,
+  showEditor = true,
+  showResult = true,
+  showConsole = false,
 }) => {
   const [snippet, setSnippet] = useState<ISnippet>(initialSnippet);
   const id = useId(userId) as string;
@@ -64,31 +70,38 @@ const Playground: FC<IProps> = ({
     <ThemeProvider userTheme={theme} mode={mode}>
       <div className="playground">
         <StyledDraggable
-          leftChild={(width) => (
-            <Editor
-              width={width}
-              code={snippet}
-              defaultTab={defaultEditorTab}
-              onChange={onSnippetChange}
-            />
-          )}
-          rightChild={(width) => (
-            <Result
-              width={width}
-              id={id}
-              snippet={snippet}
-              defaultTab={defaultResultTab}
-              transformJs={transformJs}
-              presets={presets}
-            />
-          )}
+          leftChild={(width) => {
+            return (
+              <Editor
+                width={width}
+                code={snippet}
+                defaultTab={defaultEditorTab}
+                onChange={onSnippetChange}
+              />
+            );
+          }}
+          rightChild={(width) => {
+            return (
+              <Result
+                width={width}
+                id={id}
+                snippet={snippet}
+                defaultTab={defaultResultTab}
+                transformJs={transformJs}
+                presets={presets}
+                showConsole={showConsole}
+              />
+            );
+          }}
         />
       </div>
-      <div style={{
-        width: '100%',
-        height: '20px',
-        backgroundColor: 'rgb(1, 21, 21)',
-      }}></div>
+      <div
+        style={{
+          width: "100%",
+          height: "20px",
+          backgroundColor: "rgb(1, 21, 21)",
+        }}
+      ></div>
     </ThemeProvider>
   );
 };
