@@ -9,19 +9,6 @@ const Container = styled("div", forwardRef)`
   align-items: stretch;
 `;
 
-const DividerContainer = styled("div", forwardRef)`
-  width: ${(props) => props.theme.divider.containerWidth}px;
-  background-color: ${(props) => props.theme.divider.dividerBackground};
-`;
-
-const Divider = styled("div", forwardRef)`
-  width: ${(props) => props.theme.divider.width}px;
-  cursor: col-resize;
-  background-color: ${(props) => props.theme.divider.background};
-  margin: 0 auto;
-  height: 100%;
-`;
-
 interface IProps {
   className?: string;
   leftChild: (width: number) => ReactNode;
@@ -42,9 +29,6 @@ const Draggable: FC<IProps> = ({ className = "", leftChild, rightChild }) => {
   return (
     <Container className={className} ref={containerRef}>
       {leftChild(leftWidth)}
-      <DividerContainer>
-        <Divider ref={dividerRef} />
-      </DividerContainer>
       {rightChild(rightWidth)}
     </Container>
   );

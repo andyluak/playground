@@ -15,9 +15,9 @@ export const StyledTabs = styled(Tabs)`
 `;
 
 export const StyledTabList = styled(TabList)`
-  border-bottom: ${props => props.theme.tabs.tabHeader.borderBottom};
   padding: 0 0.8em;
   background-color: ${props => props.theme.tabs.tabHeader.panelBackground || 'transparent'};
+  font-family: inherit;
 `;
 
 export const StyledTab = styled(Tab)`
@@ -29,7 +29,7 @@ export const StyledTab = styled(Tab)`
   color: ${props => props.theme.tabs.tabHeader.color};
 
   &[data-selected] {
-    border-bottom: ${props => props.theme.tabs.selectedTab.borderBottom};
+    color: yellow;
   }
 `;
 

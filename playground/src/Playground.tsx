@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import React, { FC, useState, createElement } from "react";
 import { useId } from "@reach/auto-id";
 import { styled, setup, DefaultTheme } from "goober";
@@ -14,7 +16,9 @@ setup(createElement, undefined, useTheme);
 
 const StyledDraggable = styled(Draggable)`
   border: 0.1em solid ${(props) => props.theme.container.borderColor};
+  border-bottom: 0;
   display: flex;
+  flex-direction: row;
   min-height: ${(props) => props.theme.container.minHeight};
 
   ${media.phone} {
@@ -31,6 +35,7 @@ interface IProps {
   id?: string;
   theme?: DefaultTheme;
   mode: ColorMode;
+  onChange?: (snippet: ISnippet) => void;
 }
 
 const Playground: FC<IProps> = ({
@@ -41,7 +46,8 @@ const Playground: FC<IProps> = ({
   transformJs = false,
   presets = [],
   theme,
-  mode = "light",
+  mode = "dark",
+  onChange,
 }) => {
   const [snippet, setSnippet] = useState<ISnippet>(initialSnippet);
   const id = useId(userId) as string;
@@ -51,6 +57,7 @@ const Playground: FC<IProps> = ({
       ...snippet,
       [type]: changed,
     }));
+    onChange(changed, type);
   };
 
   return (
@@ -77,6 +84,11 @@ const Playground: FC<IProps> = ({
           )}
         />
       </div>
+      <div style={{
+        width: '100%',
+        height: '20px',
+        backgroundColor: 'rgb(1, 21, 21)',
+      }}></div>
     </ThemeProvider>
   );
 };

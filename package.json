@@ -10,8 +10,7 @@
     "prepare": "husky install"
   },
   "workspaces": [
-    "playground",
-    "example"
+    "playground"
   ],
   "devDependencies": {
     "husky": "^6.0.0",

@@ -13,6 +13,7 @@ import {
 
 const TabContainer = styled(StyledTabs)`
   min-width: ${(props) => props.theme.container.minWidth};
+  border-right: 3px solid;
 `;
 
 interface IProps {

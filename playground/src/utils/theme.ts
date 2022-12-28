@@ -37,14 +37,14 @@ const darkModeColors = {
     color: "#ffffff",
   },
   console: {
-    background: "rgba(0, 0, 0, 1)",
+    background: "rgb(1, 21, 21)",
   },
   divider: {
     background: "rgba(255, 255, 255, 0.5)",
     dividerBackground: "rgba(255, 255, 255, 0.1)",
   },
   editor: {
-    backgroundColor: `#000000`,
+    backgroundColor: `rgb(1, 21, 21)`,
     color: `#ffffff`,
   },
   tabs: {
