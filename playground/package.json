@@ -1,5 +1,5 @@
 {
-  "name": "@agney/playground",
+  "name": "@alex-from-agney/code-playground",
   "version": "0.8.1",
   "description": "A simple playground for HTML, CSS and JavaScript supporting module imports.",
   "private": false,
@@ -36,7 +36,7 @@
     "dist",
     "README.md"
   ],
-  "author": "Agney Menon <agney@outlook.in> (@agneymenon)",
+  "author": "Alex Tirim |Agney Menon <agney@outlook.in> (@agneymenon)",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16",
@@ -77,9 +77,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/agneym/playground"
+    "url": "https://github.com/andyluak/playground"
   },
   "bugs": {
-    "url": "https://github.com/agneym/playground/issues"
+    "url": "https://github.com/andyluak/playground/issues"
   }
 }
