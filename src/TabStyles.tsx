@@ -15,9 +15,14 @@ export const StyledTabs = styled(Tabs)`
 `;
 
 export const StyledTabList = styled(TabList)`
-  padding: 0 0.8em;
   background-color: ${props => props.theme.tabs.tabHeader.panelBackground || 'transparent'};
   font-family: inherit;
+  padding: 0.5rem 0.8em;
+  background-color: rgb(1, 21, 21);
+  font-family: inherit;
+  display: flex;
+  gap: 1rem;
+  color: white;
 `;
 
 export const StyledTab = styled(Tab)`

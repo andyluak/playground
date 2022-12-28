@@ -1,6 +1,6 @@
 {
   "name": "agney-alex-code-playground",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "A simple playground for HTML, CSS and JavaScript supporting module imports.",
   "private": false,
   "scripts": {

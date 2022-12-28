@@ -97,7 +97,7 @@ const Playground: FC<IProps> = ({
       </div>
       <div
         style={{
-          width: "100%",
+          width: "99.5%",
           height: "20px",
           backgroundColor: "rgb(1, 21, 21)",
         }}
